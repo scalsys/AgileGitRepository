@@ -1,6 +1,6 @@
 package org.scalsys.agile.model;
-// default package
-// Generated Jul 19, 2013 12:21:44 PM by Hibernate Tools 3.4.0.CR1
+
+// Generated Jul 23, 2013 11:53:16 AM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -27,8 +27,8 @@ public class Idea implements java.io.Serializable {
 	private IdeaVote ideaVote;
 	private Contest contest;
 	private IdeaType ideaType;
-	private IdeaSubcatagory ideaSubcatagory;
-	private IdeaCatagory ideaCatagory;
+	private IdeaSubcategory ideaSubcategory;
+	private IdeaCategory ideaCategory;
 	private String ideaTitle;
 	private String description;
 	private boolean isDeleted;
@@ -39,16 +39,21 @@ public class Idea implements java.io.Serializable {
 	private Set ideaDescriptorFiles = new HashSet(0);
 
 	public Idea() {
+		this(0);
+	}
+
+	public Idea(long ideaId) {
+		
 	}
 
 	public Idea(long ideaId, IdeaType ideaType,
-			IdeaSubcatagory ideaSubcatagory, IdeaCatagory ideaCatagory,
+			IdeaSubcategory ideaSubcategory, IdeaCategory ideaCategory,
 			String ideaTitle, boolean isDeleted, Date submissionDate,
 			String stage, long coinventorId) {
 		this.ideaId = ideaId;
 		this.ideaType = ideaType;
-		this.ideaSubcatagory = ideaSubcatagory;
-		this.ideaCatagory = ideaCatagory;
+		this.ideaSubcategory = ideaSubcategory;
+		this.ideaCategory = ideaCategory;
 		this.ideaTitle = ideaTitle;
 		this.isDeleted = isDeleted;
 		this.submissionDate = submissionDate;
@@ -57,16 +62,16 @@ public class Idea implements java.io.Serializable {
 	}
 
 	public Idea(long ideaId, IdeaVote ideaVote, Contest contest,
-			IdeaType ideaType, IdeaSubcatagory ideaSubcatagory,
-			IdeaCatagory ideaCatagory, String ideaTitle, String description,
+			IdeaType ideaType, IdeaSubcategory ideaSubcategory,
+			IdeaCategory ideaCategory, String ideaTitle, String description,
 			boolean isDeleted, Date submissionDate, Date updatedDate,
 			String stage, long coinventorId, Set ideaDescriptorFiles) {
 		this.ideaId = ideaId;
 		this.ideaVote = ideaVote;
 		this.contest = contest;
 		this.ideaType = ideaType;
-		this.ideaSubcatagory = ideaSubcatagory;
-		this.ideaCatagory = ideaCatagory;
+		this.ideaSubcategory = ideaSubcategory;
+		this.ideaCategory = ideaCategory;
 		this.ideaTitle = ideaTitle;
 		this.description = description;
 		this.isDeleted = isDeleted;
@@ -119,22 +124,22 @@ public class Idea implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "subcategory_id", nullable = false)
-	public IdeaSubcatagory getIdeaSubcatagory() {
-		return this.ideaSubcatagory;
+	public IdeaSubcategory getIdeaSubcategory() {
+		return this.ideaSubcategory;
 	}
 
-	public void setIdeaSubcatagory(IdeaSubcatagory ideaSubcatagory) {
-		this.ideaSubcatagory = ideaSubcatagory;
+	public void setIdeaSubcategory(IdeaSubcategory ideaSubcategory) {
+		this.ideaSubcategory = ideaSubcategory;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id", nullable = false)
-	public IdeaCatagory getIdeaCatagory() {
-		return this.ideaCatagory;
+	public IdeaCategory getIdeaCategory() {
+		return this.ideaCategory;
 	}
 
-	public void setIdeaCatagory(IdeaCatagory ideaCatagory) {
-		this.ideaCatagory = ideaCatagory;
+	public void setIdeaCategory(IdeaCategory ideaCategory) {
+		this.ideaCategory = ideaCategory;
 	}
 
 	@Column(name = "idea_title", nullable = false)

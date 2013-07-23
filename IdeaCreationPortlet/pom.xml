@@ -7,7 +7,6 @@
 	<name>Idea Creation</name>
 	<packaging>war</packaging>
 
-
 	<parent>
 		<groupId>org.scalsys.agileinnovation</groupId>
 		<artifactId>MavenParentPom</artifactId>
@@ -18,8 +17,11 @@
 			<groupId>org.scalsys.agileinnovation</groupId>
 			<artifactId>agileCore</artifactId>
 			<version>1.0</version>
-			<type>pom</type>
+			<systemPath>E:\projects\AgileInnovationToolkit\ExoCommunity\lib\agileCore.jar</systemPath>
+			<scope>system</scope>
 		</dependency>
+		<!-- <dependency> <groupId>org.scalsys.agileinnovation</groupId> <artifactId>agileCore</artifactId> 
+			<version>1.0</version> <type>pom</type> </dependency> -->
 	</dependencies>
 	<build>
 		<plugins>
@@ -41,7 +43,8 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<!-- <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes> -->
-					<outputDirectory>E:\projects\AgileInnovationToolkit\ExoCommunity\platform-community-4.0.0\webapps</outputDirectory>
+					<pakaginginclude></pakaginginclude>
+					<outputDirectory>${exoDirectory}\webapps</outputDirectory>
 				</configuration>
 
 			</plugin>

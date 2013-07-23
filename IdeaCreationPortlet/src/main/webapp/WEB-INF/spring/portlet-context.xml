@@ -12,7 +12,7 @@
 	<!-- DispatcherPortlet Context: defines this IdeaCreationPortlet's request-processing infrastructure -->
 	
 	<!-- Autodetect annotated controllers -->
-	<context:component-scan base-package="org.scalsys.idea_creation" />
+	<context:component-scan base-package="org.scalsys.agile" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

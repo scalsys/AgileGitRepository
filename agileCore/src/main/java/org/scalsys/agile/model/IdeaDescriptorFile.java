@@ -1,6 +1,6 @@
 package org.scalsys.agile.model;
-// default package
-// Generated Jul 19, 2013 12:21:44 PM by Hibernate Tools 3.4.0.CR1
+
+// Generated Jul 23, 2013 11:53:16 AM by Hibernate Tools 3.4.0.CR1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
