@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>agileCore</artifactId>
+	<packaging>jar</packaging>
+	<name>agileCore Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<groupId>org.scalsys.agileinnovation</groupId>
+	<version>1.0</version>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>agileCore</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+
+				<configuration>
+					<outputDirectory>E:\projects\AgileInnovationToolkit\ExoCommunity\platform-community-4.0.0\lib</outputDirectory>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<parent>
+		<groupId>org.scalsys.agileinnovation</groupId>
+		<artifactId>MavenParentPom</artifactId>
+		<version>1.0</version>
+	</parent>
+
+</project>
