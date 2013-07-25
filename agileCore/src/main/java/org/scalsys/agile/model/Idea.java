@@ -1,6 +1,6 @@
 package org.scalsys.agile.model;
 
-// Generated Jul 23, 2013 11:53:16 AM by Hibernate Tools 3.4.0.CR1
+// Generated Jul 24, 2013 5:29:44 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -23,11 +23,15 @@ import javax.persistence.TemporalType;
 @Table(name = "idea", catalog = "exo_platform_idm")
 public class Idea implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long ideaId;
 	private IdeaVote ideaVote;
+	private IdeaSubcategory ideaSubcategory;
 	private Contest contest;
 	private IdeaType ideaType;
-	private IdeaSubcategory ideaSubcategory;
 	private IdeaCategory ideaCategory;
 	private String ideaTitle;
 	private String description;
@@ -36,23 +40,18 @@ public class Idea implements java.io.Serializable {
 	private Date updatedDate;
 	private String stage;
 	private long coinventorId;
-	private Set ideaDescriptorFiles = new HashSet(0);
+	private Set<IdeaDescriptorFile> ideaDescriptorFiles = new HashSet<IdeaDescriptorFile>();
 
 	public Idea() {
-		this(0);
 	}
 
-	public Idea(long ideaId) {
-		
-	}
-
-	public Idea(long ideaId, IdeaType ideaType,
-			IdeaSubcategory ideaSubcategory, IdeaCategory ideaCategory,
-			String ideaTitle, boolean isDeleted, Date submissionDate,
-			String stage, long coinventorId) {
+	public Idea(long ideaId, IdeaSubcategory ideaSubcategory,
+			IdeaType ideaType, IdeaCategory ideaCategory, String ideaTitle,
+			boolean isDeleted, Date submissionDate, String stage,
+			long coinventorId) {
 		this.ideaId = ideaId;
-		this.ideaType = ideaType;
 		this.ideaSubcategory = ideaSubcategory;
+		this.ideaType = ideaType;
 		this.ideaCategory = ideaCategory;
 		this.ideaTitle = ideaTitle;
 		this.isDeleted = isDeleted;
@@ -61,16 +60,17 @@ public class Idea implements java.io.Serializable {
 		this.coinventorId = coinventorId;
 	}
 
-	public Idea(long ideaId, IdeaVote ideaVote, Contest contest,
-			IdeaType ideaType, IdeaSubcategory ideaSubcategory,
-			IdeaCategory ideaCategory, String ideaTitle, String description,
-			boolean isDeleted, Date submissionDate, Date updatedDate,
-			String stage, long coinventorId, Set ideaDescriptorFiles) {
+	public Idea(long ideaId, IdeaVote ideaVote,
+			IdeaSubcategory ideaSubcategory, Contest contest,
+			IdeaType ideaType, IdeaCategory ideaCategory, String ideaTitle,
+			String description, boolean isDeleted, Date submissionDate,
+			Date updatedDate, String stage, long coinventorId,
+			Set<IdeaDescriptorFile> ideaDescriptorFiles) {
 		this.ideaId = ideaId;
 		this.ideaVote = ideaVote;
+		this.ideaSubcategory = ideaSubcategory;
 		this.contest = contest;
 		this.ideaType = ideaType;
-		this.ideaSubcategory = ideaSubcategory;
 		this.ideaCategory = ideaCategory;
 		this.ideaTitle = ideaTitle;
 		this.description = description;
@@ -103,6 +103,16 @@ public class Idea implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "subcategory_id", nullable = false)
+	public IdeaSubcategory getIdeaSubcategory() {
+		return this.ideaSubcategory;
+	}
+
+	public void setIdeaSubcategory(IdeaSubcategory ideaSubcategory) {
+		this.ideaSubcategory = ideaSubcategory;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "contest_id")
 	public Contest getContest() {
 		return this.contest;
@@ -120,16 +130,6 @@ public class Idea implements java.io.Serializable {
 
 	public void setIdeaType(IdeaType ideaType) {
 		this.ideaType = ideaType;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "subcategory_id", nullable = false)
-	public IdeaSubcategory getIdeaSubcategory() {
-		return this.ideaSubcategory;
-	}
-
-	public void setIdeaSubcategory(IdeaSubcategory ideaSubcategory) {
-		this.ideaSubcategory = ideaSubcategory;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -208,11 +208,11 @@ public class Idea implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idea")
-	public Set getIdeaDescriptorFiles() {
+	public Set<IdeaDescriptorFile> getIdeaDescriptorFiles() {
 		return this.ideaDescriptorFiles;
 	}
 
-	public void setIdeaDescriptorFiles(Set ideaDescriptorFiles) {
+	public void setIdeaDescriptorFiles(Set<IdeaDescriptorFile> ideaDescriptorFiles) {
 		this.ideaDescriptorFiles = ideaDescriptorFiles;
 	}
 

@@ -8,5 +8,14 @@
   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/exo_platform_idm</property>
   <property name="hibernate.connection.username">root</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <mapping package="org.scalsys.agile.model" />
+  <mapping class="org.scalsys.agile.model.Idea"/>
+  <mapping class="org.scalsys.agile.model.Contest" />
+  <mapping class="org.scalsys.agile.model.IdeaCategory" />
+  <mapping class="org.scalsys.agile.model.IdeaDescriptorFile" />
+  <mapping class="org.scalsys.agile.model.IdeaSubcategory" />
+  <mapping class="org.scalsys.agile.model.IdeaType" />
+  <mapping class="org.scalsys.agile.model.IdeaVote" />
+  <!-- <mapping class="org.scalsys.agile.model.TestPojo" /> -->
  </session-factory>
 </hibernate-configuration>

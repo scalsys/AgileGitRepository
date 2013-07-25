@@ -9,8 +9,12 @@
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 		<init-param>
 			<name>contextConfigLocation</name>
-			<value>/WEB-INF/spring/portlet-context.xml</value>
+			<value>/WEB-INF/agile-portlet.xml</value>
 		</init-param>
+		<!-- <init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/spring/portlet-context.xml</value>
+		</init-param> -->
 		<supports>
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>

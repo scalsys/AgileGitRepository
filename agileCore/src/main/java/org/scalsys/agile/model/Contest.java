@@ -1,6 +1,6 @@
 package org.scalsys.agile.model;
 
-// Generated Jul 23, 2013 11:53:16 AM by Hibernate Tools 3.4.0.CR1
+// Generated Jul 24, 2013 5:29:44 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,9 +18,13 @@ import javax.persistence.Table;
 @Table(name = "contest", catalog = "exo_platform_idm")
 public class Contest implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long contestId;
 	private String contestName;
-	private Set ideas = new HashSet(0);
+	private Set<Idea> ideas = new HashSet<Idea>();
 
 	public Contest() {
 	}
@@ -30,7 +34,7 @@ public class Contest implements java.io.Serializable {
 		this.contestName = contestName;
 	}
 
-	public Contest(long contestId, String contestName, Set ideas) {
+	public Contest(long contestId, String contestName, Set<Idea> ideas) {
 		this.contestId = contestId;
 		this.contestName = contestName;
 		this.ideas = ideas;
@@ -56,11 +60,11 @@ public class Contest implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "contest")
-	public Set getIdeas() {
+	public Set<Idea> getIdeas() {
 		return this.ideas;
 	}
 
-	public void setIdeas(Set ideas) {
+	public void setIdeas(Set<Idea> ideas) {
 		this.ideas = ideas;
 	}
 

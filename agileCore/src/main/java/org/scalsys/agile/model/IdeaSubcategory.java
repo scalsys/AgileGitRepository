@@ -1,6 +1,6 @@
 package org.scalsys.agile.model;
 
-// Generated Jul 23, 2013 11:53:16 AM by Hibernate Tools 3.4.0.CR1
+// Generated Jul 24, 2013 5:29:44 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,41 +20,45 @@ import javax.persistence.Table;
 @Table(name = "idea_subcategory", catalog = "exo_platform_idm")
 public class IdeaSubcategory implements java.io.Serializable {
 
-	private long subcatagoryId;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private long subcategoryId;
 	private IdeaCategory ideaCategory;
 	private String name;
-	private Set ideas = new HashSet(0);
+	private Set<Idea> ideas = new HashSet<Idea>();
 
 	public IdeaSubcategory() {
 	}
 
-	public IdeaSubcategory(long subcatagoryId, IdeaCategory ideaCategory,
+	public IdeaSubcategory(long subcategoryId, IdeaCategory ideaCategory,
 			String name) {
-		this.subcatagoryId = subcatagoryId;
+		this.subcategoryId = subcategoryId;
 		this.ideaCategory = ideaCategory;
 		this.name = name;
 	}
 
-	public IdeaSubcategory(long subcatagoryId, IdeaCategory ideaCategory,
-			String name, Set ideas) {
-		this.subcatagoryId = subcatagoryId;
+	public IdeaSubcategory(long subcategoryId, IdeaCategory ideaCategory,
+			String name, Set<Idea> ideas) {
+		this.subcategoryId = subcategoryId;
 		this.ideaCategory = ideaCategory;
 		this.name = name;
 		this.ideas = ideas;
 	}
 
 	@Id
-	@Column(name = "subcatagory_id", unique = true, nullable = false)
-	public long getSubcatagoryId() {
-		return this.subcatagoryId;
+	@Column(name = "subcategory_id", unique = true, nullable = false)
+	public long getSubcategoryId() {
+		return this.subcategoryId;
 	}
 
-	public void setSubcatagoryId(long subcatagoryId) {
-		this.subcatagoryId = subcatagoryId;
+	public void setSubcategoryId(long subcategoryId) {
+		this.subcategoryId = subcategoryId;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "catagory_id", nullable = false)
+	@JoinColumn(name = "category_id", nullable = false)
 	public IdeaCategory getIdeaCategory() {
 		return this.ideaCategory;
 	}
@@ -73,11 +77,11 @@ public class IdeaSubcategory implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "ideaSubcategory")
-	public Set getIdeas() {
+	public Set<Idea> getIdeas() {
 		return this.ideas;
 	}
 
-	public void setIdeas(Set ideas) {
+	public void setIdeas(Set<Idea> ideas) {
 		this.ideas = ideas;
 	}
 

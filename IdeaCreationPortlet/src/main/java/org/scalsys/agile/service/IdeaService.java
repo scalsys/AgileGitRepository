@@ -4,6 +4,5 @@ import org.scalsys.agile.model.Idea;
 
 public interface IdeaService {
 
-	Boolean createIdea(Idea idea);
-
+	public void createIdea(Idea idea);
 }

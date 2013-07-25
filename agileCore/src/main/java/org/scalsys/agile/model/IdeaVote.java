@@ -1,6 +1,6 @@
 package org.scalsys.agile.model;
 
-// Generated Jul 23, 2013 11:53:16 AM by Hibernate Tools 3.4.0.CR1
+// Generated Jul 24, 2013 5:29:44 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -21,10 +21,14 @@ import javax.persistence.TemporalType;
 @Table(name = "idea_vote", catalog = "exo_platform_idm")
 public class IdeaVote implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long voteId;
 	private Date startVoting;
 	private Date endVoting;
-	private Set ideas = new HashSet(0);
+	private Set<Idea> ideas = new HashSet<Idea>();
 
 	public IdeaVote() {
 	}
@@ -34,7 +38,7 @@ public class IdeaVote implements java.io.Serializable {
 		this.startVoting = startVoting;
 	}
 
-	public IdeaVote(long voteId, Date startVoting, Date endVoting, Set ideas) {
+	public IdeaVote(long voteId, Date startVoting, Date endVoting, Set<Idea> ideas) {
 		this.voteId = voteId;
 		this.startVoting = startVoting;
 		this.endVoting = endVoting;
@@ -72,11 +76,11 @@ public class IdeaVote implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "ideaVote")
-	public Set getIdeas() {
+	public Set<Idea> getIdeas() {
 		return this.ideas;
 	}
 
-	public void setIdeas(Set ideas) {
+	public void setIdeas(Set<Idea> ideas) {
 		this.ideas = ideas;
 	}
 

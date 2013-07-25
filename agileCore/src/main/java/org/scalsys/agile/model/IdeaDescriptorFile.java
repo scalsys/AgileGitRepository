@@ -1,6 +1,6 @@
 package org.scalsys.agile.model;
 
-// Generated Jul 23, 2013 11:53:16 AM by Hibernate Tools 3.4.0.CR1
+// Generated Jul 24, 2013 5:29:44 PM by Hibernate Tools 3.4.0.CR1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "idea_descriptor_file", catalog = "exo_platform_idm")
 public class IdeaDescriptorFile implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long fileId;
 	private Idea idea;
 	private String fileName;
