@@ -5,30 +5,32 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.scalsys.agile.dao.IdeaDAO;
-import org.scalsys.agile.model.Idea;
+import org.scalsys.agile.dao.IdeaVoteDAO;
+import org.scalsys.agile.model.IdeaVote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class IdeaDAOImpl implements IdeaDAO {
+public class IdeaVoteDAOImpl implements IdeaVoteDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public void createIdea(Idea idea) {
-		System.out.println("createIdea Method called");
+	
+	public void createIdeaVote(IdeaVote ideaVote) {
+          
+		System.out.println("createIdeaVote Method called");
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		session.save(idea);
+		session.save(ideaVote);
 		transaction.commit();
 		session.close();
+		
 	}
 
-	
-	public List<Idea> listIdea() {
-		System.out.println("listIdea Method called");
+	public List<IdeaVote> listIdeaVote() {
+		System.out.println("listIdeaVote Method called");
 		Session session = sessionFactory.openSession();
-		return session.createQuery("from Idea").list();
+		return session.createQuery("from IdeaVote").list();
 	}
 }

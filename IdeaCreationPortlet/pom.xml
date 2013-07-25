@@ -21,8 +21,12 @@
 			<scope>system</scope>
 		</dependency>
 		
-		<!-- <dependency> <groupId>org.scalsys.agileinnovation</groupId> <artifactId>agileCore</artifactId> 
-			<version>1.0</version> <type>pom</type> </dependency> -->
+		<!-- <dependency>
+		 <groupId>org.scalsys.agileinnovation</groupId>
+		  <artifactId>agileCore</artifactId> 
+			<version>1.0</version> 
+			<type>jar</type>
+			 </dependency> -->
 	</dependencies>
 	<build>
 		<plugins>

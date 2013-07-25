@@ -5,30 +5,30 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.scalsys.agile.dao.IdeaDAO;
-import org.scalsys.agile.model.Idea;
+import org.scalsys.agile.dao.IdeaSubCategoryDAO;
+import org.scalsys.agile.model.IdeaSubcategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class IdeaDAOImpl implements IdeaDAO {
+public class IdeaSubCategoryDAOImpl implements IdeaSubCategoryDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public void createIdea(Idea idea) {
-		System.out.println("createIdea Method called");
+	public void createIdeaSubCategory(IdeaSubcategory ideaSubCategory) {
+		System.out.println("createIdeaSubCategory Method called");
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		session.save(idea);
+		session.save(ideaSubCategory);
 		transaction.commit();
 		session.close();
 	}
-
 	
-	public List<Idea> listIdea() {
-		System.out.println("listIdea Method called");
+	public List<IdeaSubcategory> listIdeaSubCategory() {
+		
+		System.out.println("listIdeaSubCategory Method called");
 		Session session = sessionFactory.openSession();
-		return session.createQuery("from Idea").list();
+		return session.createQuery("from IdeaSubcategory").list();
 	}
 }

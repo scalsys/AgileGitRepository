@@ -1,5 +1,7 @@
 package org.scalsys.agile.dao.impl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,6 +24,13 @@ public class IdeaTypeDAOImpl implements IdeaTypeDAO {
 		session.save(ideaType);
 		transaction.commit();
 		session.close();
+	}
+
+	
+	public List<IdeaType> listIdeaType() {
+		System.out.println("listIdeaType Method called");
+		Session session = sessionFactory.openSession();
+		return session.createQuery("from IdeaType").list();
 	}
 
 }

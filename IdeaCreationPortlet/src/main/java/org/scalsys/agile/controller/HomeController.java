@@ -1,25 +1,19 @@
 package org.scalsys.agile.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.Locale;
-import java.util.Set;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
 
 import org.exoplatform.webui.application.portlet.PortletApplicationController;
-import org.scalsys.agile.model.Contest;
-import org.scalsys.agile.model.Idea;
-import org.scalsys.agile.model.IdeaCategory;
-import org.scalsys.agile.model.IdeaDescriptorFile;
-import org.scalsys.agile.model.IdeaSubcategory;
 import org.scalsys.agile.model.IdeaType;
-import org.scalsys.agile.model.IdeaVote;
+import org.scalsys.agile.service.IdeaCategoryService;
+import org.scalsys.agile.service.IdeaContestService;
 import org.scalsys.agile.service.IdeaService;
+import org.scalsys.agile.service.IdeaSubCategoryService;
 import org.scalsys.agile.service.IdeaTypeService;
+import org.scalsys.agile.service.IdeaVoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,21 +36,36 @@ public class HomeController extends PortletApplicationController {
 	@Autowired
 	private IdeaTypeService ideaTypeService;
 	
+	@Autowired
+	private IdeaCategoryService ideaCategoryService;
+	
+	@Autowired
+	private IdeaContestService ideaContestService;
+	
+	@Autowired
+	private IdeaVoteService ideaVoteService;
+	
+	@Autowired 
+	private IdeaSubCategoryService ideaSubCategoryService;
+	
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
 
 	@RenderMapping
 	public String home(Locale locale, Model model,RenderRequest renderRequest) {
 		logger.info("Welcome home! the client locale is " + locale.toString());
-
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
-				DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-
-		model.addAttribute("serverTime", formattedDate);
-
+        
+         model.addAttribute("SubCategories",ideaSubCategoryService.listSubCategory());
+         model.addAttribute("IdeaTypes",ideaTypeService.listIdeaType());
+         model.addAttribute("IdeaVotes", ideaVoteService.listIdeaVote());
+         model.addAttribute("IdeaContest",ideaContestService.listContest());
+         model.addAttribute("Categories",ideaCategoryService.listCategory());
+         System.out.println("idea categoty=======>"+ideaCategoryService.listCategory());
+         System.out.println("idea Subcategory====>"+ideaSubCategoryService.listSubCategory());
+         System.out.println("idea contest====>"+ideaContestService.listContest());
+         System.out.println("idea Votes====>"+ideaVoteService.listIdeaVote());
+         System.out.println("idea types====>"+ideaTypeService.listIdeaType());
+      
 		return "home";
 	}
 

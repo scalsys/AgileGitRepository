@@ -1,5 +1,7 @@
 package org.scalsys.agile.service.impl;
 
+import java.util.List;
+
 import org.scalsys.agile.dao.IdeaTypeDAO;
 import org.scalsys.agile.model.IdeaType;
 import org.scalsys.agile.service.IdeaTypeService;
@@ -24,5 +26,11 @@ public class IdeaTypeServiceImpl implements IdeaTypeService{
 	@Transactional
 	public void createIdeaType(IdeaType ideaType) {
 		ideaTypeDAO.createIdeaType(ideaType);
+	}
+
+	@Transactional
+	public List<IdeaType> listIdeaType() {
+	
+		return ideaTypeDAO.listIdeaType();
 	}
 }
