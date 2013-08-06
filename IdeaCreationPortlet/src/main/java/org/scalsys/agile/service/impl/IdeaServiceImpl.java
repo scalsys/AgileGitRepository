@@ -33,4 +33,16 @@ public class IdeaServiceImpl implements IdeaService {
 	
 		return ideaDAO.listIdea();
 	}
+
+	@Transactional
+	public Idea getIdea(Integer ideaId) {
+		
+		return ideaDAO.getIdea(ideaId);
+	}
+
+	@Transactional
+	public Long getNextIdeaId() {
+		
+		return ideaDAO.getNextIdeaId();
+	}
 }

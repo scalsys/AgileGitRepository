@@ -35,4 +35,9 @@ public class IdeaSubCategoryServiceImpl implements IdeaSubCategoryService {
 	public List<IdeaSubcategory> listSubCategory() {
 	  return ideaSubCategoryDAO.listIdeaSubCategory();	
 	}
+
+	@Transactional
+	public IdeaSubcategory getIdeaSubCategory(Long subcategoryId) {
+		 return ideaSubCategoryDAO.getIdeaSubCategory(subcategoryId);	
+	}
 }

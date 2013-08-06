@@ -33,4 +33,13 @@ public class IdeaContestDAOImpl implements IdeaContestDAO {
 		Session session = sessionFactory.openSession();
 		return session.createQuery("from Contest").list();
 	}
+
+	public Contest getIdeaContest(Long contestId) {
+		
+		Session session = sessionFactory.openSession();
+		Contest contest = (Contest) session.get(
+				Contest.class, contestId);
+		session.close();
+		return contest;
+	}
 }

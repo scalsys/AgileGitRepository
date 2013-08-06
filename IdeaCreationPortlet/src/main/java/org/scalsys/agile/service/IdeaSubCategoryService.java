@@ -8,4 +8,5 @@ public interface IdeaSubCategoryService {
 
 	public void createIdeaSubCategory(IdeaSubcategory ideaSubcategory);
 	public List<IdeaSubcategory> listSubCategory();
+	public IdeaSubcategory getIdeaSubCategory(Long subcategoryId); 
 }

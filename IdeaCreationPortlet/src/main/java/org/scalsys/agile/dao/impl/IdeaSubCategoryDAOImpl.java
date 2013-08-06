@@ -31,4 +31,13 @@ public class IdeaSubCategoryDAOImpl implements IdeaSubCategoryDAO {
 		Session session = sessionFactory.openSession();
 		return session.createQuery("from IdeaSubcategory").list();
 	}
+
+	
+	public IdeaSubcategory getIdeaSubCategory(Long subcategoryId) {
+		Session session = sessionFactory.openSession();
+		IdeaSubcategory ideaSubcategory = (IdeaSubcategory) session.get(
+				IdeaSubcategory.class, subcategoryId);
+		session.close();
+		return ideaSubcategory;
+	}
 }

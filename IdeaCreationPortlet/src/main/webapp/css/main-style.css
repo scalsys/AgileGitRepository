@@ -1,0 +1,108 @@
+.divValidationStyle {
+	background-color: yellow;
+	border: 1px dashed black;
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 275px;
+	width: 50%;
+}
+
+.divformStyle {
+	background-color: #E8F2F7;
+}
+
+.spanIdeaTitle {
+	margin-left: 5px;
+	float: left;
+}
+
+.spanIdeaInputTitle {
+	margin-left: 83px;
+}
+
+.spanEmailHeader {
+	margin-left: 21px;
+	text-align: center;
+}
+
+.spanEmailtext {
+	margin-left: 6px;
+}
+
+.spanAddressHeader {
+	margin-left: 5px;
+	text-align: left;
+}
+
+.spanAddresstextarea {
+	margin-left: 8px;
+}
+
+.spanheadergender {
+	margin-left: 395px;
+	float: left;
+}
+
+.spaninputgenderstyle {
+	margin-left: 17px;
+}
+
+.inputmalestyle {
+	margin-top: -2px;
+	margin-left: -328px;
+}
+
+.inputfemalestyle {
+	margin-top: -2px;
+}
+
+.spanPhoneNoHeader {
+	margin-left: 4px;
+}
+
+.spaninputstyle {
+	margin-left: 3px;
+}
+
+.suubmitbuttonstyle {
+	width: 75px;
+	margin-left: 50px;
+}
+
+.resetbuttonstyle {
+	width: 75px;
+}
+
+.cancelbuttonstyle {
+	width: 75px;
+}
+
+.fileUploadForm {
+	display: block;
+	margin: 20px auto;
+	background: #eee;
+	border-radius: 10px;
+	padding: 15px
+}
+
+#progress {
+	position: relative;
+	width: 400px;
+	border: 1px solid #ddd;
+	padding: 1px;
+	border-radius: 3px;
+}
+
+#bar {
+	background-color: #B4F5B4;
+	width: 0%;
+	height: 20px;
+	border-radius: 3px;
+}
+
+#percent {
+	position: absolute;
+	display: inline-block;
+	top: 3px;
+	left: 48%;
+}

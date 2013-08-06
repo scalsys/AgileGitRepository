@@ -30,13 +30,13 @@ public class IdeaDescriptorFile implements java.io.Serializable {
 	public IdeaDescriptorFile() {
 	}
 
-	public IdeaDescriptorFile(Idea idea, String fileName) {
+	public IdeaDescriptorFile(long fileId,Idea idea, String fileName) {
+		this.fileId= fileId;
 		this.idea = idea;
 		this.fileName = fileName;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "file_id", unique = true, nullable = false)
 	public Long getFileId() {
 		return this.fileId;

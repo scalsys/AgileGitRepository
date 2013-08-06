@@ -34,4 +34,13 @@ public class IdeaCategoryDAOImpl implements IdeaCategoryDAO {
 		return session.createQuery("from IdeaCategory").list();
 		
 	}
+
+	public IdeaCategory getIdeaCategory(Long categoryId) {
+		
+		Session session = sessionFactory.openSession();
+		IdeaCategory ideaCategory = (IdeaCategory) session.get(
+				IdeaCategory.class, categoryId);
+		session.close();
+		return ideaCategory;
+	}
 }

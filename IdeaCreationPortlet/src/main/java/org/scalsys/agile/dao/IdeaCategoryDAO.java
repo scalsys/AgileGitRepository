@@ -8,4 +8,5 @@ public interface IdeaCategoryDAO {
 
 	public void createIdeaCategory(IdeaCategory ideaCategory);
 	public List<IdeaCategory> listIdeaCategory();
+	public IdeaCategory getIdeaCategory(Long categoryId); 
 }

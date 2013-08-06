@@ -8,4 +8,6 @@ public interface IdeaVoteService {
 
 	public void createIdeaVote(IdeaVote ideaVote);
 	public List<IdeaVote> listIdeaVote();
+	public IdeaVote getIdeaVote(Integer ideaVoteId);
+	public Long getNextIdeaVoteId();
 }

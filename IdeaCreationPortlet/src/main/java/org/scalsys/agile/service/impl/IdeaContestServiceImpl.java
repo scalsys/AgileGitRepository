@@ -34,4 +34,10 @@ public class IdeaContestServiceImpl implements IdeaContestService {
 		
 		return ideaContestDAO.listContest();
 	}
+
+	@Transactional
+	public Contest getIdeaContest(Long contestId) {
+		
+		return ideaContestDAO.getIdeaContest(contestId);
+	}
 }

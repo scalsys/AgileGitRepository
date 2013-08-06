@@ -8,4 +8,5 @@ public interface IdeaContestDAO {
 
 	public void createIdeaContest(Contest contest);
 	public List<Contest> listContest();
+	public Contest getIdeaContest(Long contestId);
 }

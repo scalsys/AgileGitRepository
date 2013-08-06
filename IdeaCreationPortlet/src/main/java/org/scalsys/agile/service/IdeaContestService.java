@@ -8,4 +8,6 @@ public interface IdeaContestService {
 
 	public void createIdeaContest(Contest contest);
 	public List<Contest> listContest();
+	public Contest getIdeaContest(Long ideaContestId); 
+	
 }

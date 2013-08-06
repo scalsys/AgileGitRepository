@@ -8,4 +8,5 @@ public interface IdeaSubCategoryDAO {
 
 	public void createIdeaSubCategory(IdeaSubcategory ideaSubCategory);
 	public List<IdeaSubcategory> listIdeaSubCategory();
+	public IdeaSubcategory getIdeaSubCategory(Long subcategoryId);
 }

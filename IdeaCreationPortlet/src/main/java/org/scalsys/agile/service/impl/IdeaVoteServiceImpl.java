@@ -34,6 +34,17 @@ public class IdeaVoteServiceImpl implements IdeaVoteService{
 		return ideaVoteDAO.listIdeaVote();
 	}
 
+	@Transactional
+	public IdeaVote getIdeaVote(Integer ideaVoteId) {
+		return ideaVoteDAO.getIdeaVote(ideaVoteId);
+	}
+
+	@Transactional
+	public Long getNextIdeaVoteId() {
+		
+		return ideaVoteDAO.getNextIdeaVoteId();
+	}
+
 
 
 	

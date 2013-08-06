@@ -33,4 +33,14 @@ public class IdeaTypeDAOImpl implements IdeaTypeDAO {
 		return session.createQuery("from IdeaType").list();
 	}
 
+
+	
+	public IdeaType getIdeaType(Long ideaTypeId) {
+		Session session = sessionFactory.openSession();
+		IdeaType ideaType = (IdeaType) session.get(
+				IdeaType.class, ideaTypeId);
+		session.close();
+		return ideaType;
+	}
+
 }

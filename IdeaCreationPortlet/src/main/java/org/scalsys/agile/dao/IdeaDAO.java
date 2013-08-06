@@ -8,4 +8,6 @@ public interface IdeaDAO {
 
 	public void createIdea(Idea idea);
 	public List<Idea> listIdea();
+	public Idea getIdea(Integer ideaId);
+	  public Long getNextIdeaId();
 }

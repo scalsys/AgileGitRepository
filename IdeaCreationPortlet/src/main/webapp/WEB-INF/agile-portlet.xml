@@ -21,7 +21,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<bean id="ideaService" class="org.scalsys.agile.service.impl.IdeaServiceImpl" />
+	<bean id="ideaService" class="org.scalsys.agile.service.impl.IdeaServiceImpl"/>
 	<bean id="ideaDAO" class="org.scalsys.agile.dao.impl.IdeaDAOImpl" />
 	<bean id="ideaTypeService" class="org.scalsys.agile.service.impl.IdeaTypeServiceImpl"/>
 	<bean id="ideaTypeDAO" class="org.scalsys.agile.dao.impl.IdeaTypeDAOImpl" />
@@ -32,8 +32,13 @@
 	<bean id="ideaVoteService" class="org.scalsys.agile.service.impl.IdeaVoteServiceImpl"/>
 	<bean id="ideaVoteDAO" class="org.scalsys.agile.dao.impl.IdeaVoteDAOImpl" />
 	<bean id="ideaSubCategoryService" class="org.scalsys.agile.service.impl.IdeaSubCategoryServiceImpl"/>
-	<bean id="ideaSubCategoryDAO" class="org.scalsys.agile.dao.impl.IdeaSubCategoryDAOImpl" />
-	<bean id="ideaValidator" class="com.scalsys.agile.validation.IdeaValidator" />
+	<bean id="ideaSubCategoryDAO" class="org.scalsys.agile.dao.impl.IdeaSubCategoryDAOImpl"/>
+	<bean id="ideaFileDescriptorService" class="org.scalsys.agile.service.impl.IdeaFileDescriptorServiceImpl"/>
+	<bean id="ideaFileDescriptorDAO" class="org.scalsys.agile.dao.impl.IdeaFileDescriptorDAOImpl"/>
+	<bean id="exoUtilService" class="org.scalsys.agile.service.impl.ExoUtilServiceImpl"/>
+	<bean id="exoUtilDAO" class="org.scalsys.agile.dao.impl.ExoUtilDAOImpl"/>
+	
+	<bean id="ideaValidator" class="com.scalsys.agile.validation.IdeaValidator"/>
    
 
 	<tx:advice id="txAdvice" transaction-manager="txManager">

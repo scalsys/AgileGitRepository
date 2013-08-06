@@ -33,4 +33,10 @@ public class IdeaCategoryServiceImpl implements IdeaCategoryService {
 		
 		return ideaCategoryDAO.listIdeaCategory();
 	}
+
+	@Transactional
+	public IdeaCategory getIdeaCategory(Long categoryId) {
+	
+		return ideaCategoryDAO.getIdeaCategory(categoryId);
+	}
 }

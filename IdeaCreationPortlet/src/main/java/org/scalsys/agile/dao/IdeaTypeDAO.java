@@ -8,5 +8,6 @@ public interface IdeaTypeDAO {
 	
 	public void createIdeaType(IdeaType ideaType);
 	public List<IdeaType> listIdeaType();
+	public IdeaType getIdeaType(Long ideaTypeId);
 
 }

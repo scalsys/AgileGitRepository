@@ -33,4 +33,9 @@ public class IdeaTypeServiceImpl implements IdeaTypeService{
 	
 		return ideaTypeDAO.listIdeaType();
 	}
+
+	@Transactional
+	public IdeaType getIdeaType(Long ideaTypeId) {
+		return ideaTypeDAO.getIdeaType(ideaTypeId);
+	}
 }

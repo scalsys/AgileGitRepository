@@ -1,5 +1,6 @@
 package org.scalsys.agile.dao.impl;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -31,4 +32,24 @@ public class IdeaDAOImpl implements IdeaDAO {
 		Session session = sessionFactory.openSession();
 		return session.createQuery("from Idea").list();
 	}
+
+
+	
+	public Idea getIdea(Integer ideaId) {
+		
+		Session session = sessionFactory.openSession();
+		Idea idea = (Idea) session.get(
+				Idea.class, ideaId);
+		session.close();
+		return idea;
+	}
+	
+    public Long getNextIdeaId()
+    {
+    	Session session = sessionFactory.openSession();
+    	Long ideaId = (Long) session.createQuery("select ideaId from Idea order by ideaId DESC LIMIT 1").list().get(0);
+    	Long nextIdeaId = ideaId +1;
+		session.close();
+		return nextIdeaId;
+    }
 }
